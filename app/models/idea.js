@@ -1,16 +1,6 @@
-import Model, { attr, hasMany } from '@ember-data/model';
-import classic from 'ember-classic-decorator';
-import { computed } from '@ember/object';
+import Model, { attr } from '@ember-data/model';
 
-@classic
 export default class IdeaModel extends Model {
-  @attr() summary;
-  @attr() comments;
-  @attr('date') createdAt;
-  @hasMany('quote') quotes;
-
-  @computed('id')
-  get numericId() {
-    return Number(this.id);
-  }
+  @attr summary;
+  @attr quote;
 }
